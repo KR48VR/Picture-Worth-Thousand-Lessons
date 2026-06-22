@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Science & Math in Wildlife Photos</title>
+  <meta name="description" content="Interactive educational resource connecting wildlife photography, science, mathematics, and engineering design." />
+  <link rel="stylesheet" href="styles.css" />
+  <script data-goatcounter="https://kr48vr.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-backdrop"></div>
+    <nav class="topbar">
+      <a class="brand" href="#top"><span class="brand-mark">∑</span><span>Science & Math in Wildlife Photos</span></a>
+      <div class="nav-actions">
+        <a href="#modules">Gallery</a>
+        <a href="#guide">Teacher guide</a>
+        <button id="themeToggle" type="button" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </nav>
+
+    <div class="hero-content wrap hero-layout">
+      <div class="hero-copy">
+        <p class="eyebrow">Interactive exhibition companion</p>
+        <h1>Wildlife photography, science, maths, and design — in one visual journey</h1>
+        <p class="lede">A modern, natural-history style learning experience: start from the original exhibition photograph, compare it with science and maths explainers, and then transfer the same principles into real-world engineering.</p>
+        <div class="hero-buttons">
+          <a class="button primary" href="#modules">Explore the gallery</a>
+          <a class="button" href="#guide">See the teaching flow</a>
+        </div>
+      </div>
+
+      <div class="hero-montage" aria-hidden="true">
+        <figure class="montage-tile tall">
+          <img src="assets/images/osprey_original.jpeg" alt="">
+          <figcaption>Original photo</figcaption>
+        </figure>
+        <figure class="montage-tile">
+          <img src="assets/images/bird_secondary.png" alt="">
+          <figcaption>Science visual</figcaption>
+        </figure>
+        <figure class="montage-tile wide">
+          <img src="assets/images/elephant_original.jpeg" alt="">
+          <figcaption>Exhibition image</figcaption>
+        </figure>
+        <figure class="montage-tile tall">
+          <img src="assets/images/lemurs_university.png" alt="">
+          <figcaption>University view</figcaption>
+        </figure>
+        <figure class="montage-tile wide">
+          <img src="assets/images/otter_engineering.png" alt="">
+          <figcaption>Nature → engineering</figcaption>
+        </figure>
+        <figure class="montage-tile">
+          <img src="assets/images/bird_original.jpeg" alt="">
+          <figcaption>Original photo</figcaption>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="pathway" aria-label="Learning pathway">
+      <article class="path-card"><span>1</span><h2>See the original moment</h2><p>Start with the catalogue photograph, title, photographer, year, and exhibition details.</p></article>
+      <article class="path-card"><span>2</span><h2>Watch the science appear</h2><p>Each thumbnail crossfades between the wildlife photo and a science/maths explainer.</p></article>
+      <article class="path-card"><span>3</span><h2>Transfer to design</h2><p>Move from nature to engineering and discuss how the same principles shape useful technology.</p></article>
+    </section>
+
+    <section id="modules" class="section">
+      <div class="section-head">
+        <p class="eyebrow">Gallery</p>
+        <h2>Choose a wildlife module</h2>
+        <p>Every card animates between the original photograph and the currently selected explainer mode.</p>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-wrap">
+          <span>Search concepts</span>
+          <input id="searchInput" type="search" placeholder="e.g. friction, buoyancy, pressure, robot" />
+        </label>
+        <div class="view-chips" role="group" aria-label="Select gallery explainer view">
+          <button class="chip active" data-tab="secondary" type="button">Secondary</button>
+          <button class="chip" data-tab="university" type="button">University</button>
+          <button class="chip" data-tab="engineering" type="button">Nature → Engineering</button>
+        </div>
+      </div>
+
+      <div id="moduleGrid" class="module-grid"></div>
+      <p id="noResults" class="no-results" hidden>No modules match that search.</p>
+    </section>
+
+    <section id="viewer" class="viewer" aria-live="polite" hidden>
+      <div class="viewer-bar">
+        <button class="back-link" id="backToGallery" type="button">← Back to gallery</button>
+        <div class="viewer-nav">
+          <button id="prevModule" type="button">← Previous</button>
+          <button id="nextModule" type="button">Next →</button>
+        </div>
+      </div>
+
+      <div class="viewer-shell">
+        <div class="viewer-main card">
+          <div class="viewer-head">
+            <div>
+              <div class="module-title-row"><span id="moduleEmoji" class="module-emoji"></span><h2 id="moduleTitle"></h2></div>
+              <p id="moduleTagline" class="module-tagline"></p>
+              <p id="viewerCredit" class="viewer-credit"></p>
+            </div>
+            <div class="tab-list" role="tablist" aria-label="Learning level tabs">
+              <button class="viewer-tab active" id="tab-secondary" data-tab="secondary" role="tab" type="button">Secondary</button>
+              <button class="viewer-tab" id="tab-university" data-tab="university" role="tab" type="button">University</button>
+              <button class="viewer-tab" id="tab-engineering" data-tab="engineering" role="tab" type="button">Nature → Engineering</button>
+            </div>
+          </div>
+
+          <div class="compare-grid">
+            <figure class="compare-panel">
+              <div class="panel-label">Original exhibition photo</div>
+              <img id="originalImage" src="" alt="" />
+              <figcaption id="originalCaption"></figcaption>
+              <div class="panel-actions">
+                <a id="downloadOriginal" class="button subtle" download>Download original</a>
+                <button id="zoomOriginal" class="button subtle" type="button">Zoom</button>
+              </div>
+            </figure>
+            <figure class="compare-panel">
+              <div class="panel-label" id="explainerPanelLabel">Secondary explainer</div>
+              <img id="explainerImage" src="" alt="" />
+              <figcaption id="explainerCaption"></figcaption>
+              <div class="panel-actions">
+                <a id="downloadExplainer" class="button primary" download>Download current PNG</a>
+                <button id="zoomExplainer" class="button subtle" type="button">Zoom</button>
+              </div>
+            </figure>
+          </div>
+        </div>
+
+        <aside class="viewer-side">
+          <div class="card source-card">
+            <div class="source-label">Photo provenance</div>
+            <div id="sourceCard"></div>
+          </div>
+
+          <div class="card notes-card compact-card">
+            <h3>Key ideas in this view</h3>
+            <ul id="notesList"></ul>
+          </div>
+
+          <div class="card prompt-card compact-card">
+            <h3>Classroom prompts</h3>
+            <ol id="promptList"></ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="guide" class="section guide">
+      <div class="section-head">
+        <p class="eyebrow">Teacher guide</p>
+        <h2>Suggested lesson flow</h2>
+      </div>
+      <div class="guide-grid">
+        <article class="guide-card card"><h3>5 min — Notice</h3><p>Show the original photo and ask what is happening before revealing the annotated visual.</p></article>
+        <article class="guide-card card"><h3>10 min — Explain</h3><p>Compare the original and the selected explainer side by side, and identify which ideas became visible.</p></article>
+        <article class="guide-card card"><h3>10 min — Transfer</h3><p>Use the Nature → Engineering mode to discuss how natural principles are translated into design.</p></article>
+        <article class="guide-card card"><h3>Extension</h3><p>Invite students to build their own mini module from a new wildlife image using the same structure.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="modal-close" type="button" data-close>×</button>
+      <img id="modalImage" alt="Large preview" />
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>Static site package — upload the whole folder to GitHub Pages or any basic web host.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
