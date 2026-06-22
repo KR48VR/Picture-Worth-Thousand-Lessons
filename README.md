@@ -28,3 +28,6 @@ The available Group A shortlist table does not provide shooting locations for th
 ## Analytics
 
 GoatCounter is included with site endpoint `https://kr48vr.goatcounter.com/count` via the standard `gc.zgo.at/count.js` script.
+
+
+This light package compresses poster images as JPEG for easier GitHub browser upload and faster GitHub Pages loading.

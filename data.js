@@ -10,9 +10,9 @@ window.MODULES = [
       "Then compare your guesses with the Secondary, University, and Engineering views."
     ],
     "images": {
-      "secondary": "assets/images/osprey_secondary.png",
-      "university": "assets/images/osprey_university.png",
-      "engineering": "assets/images/osprey_engineering.png",
+      "secondary": "assets/images/osprey_secondary.jpg",
+      "university": "assets/images/osprey_university.jpg",
+      "engineering": "assets/images/osprey_engineering.jpg",
       "original": "assets/images/osprey_original.jpeg"
     },
     "secondary": [
@@ -105,9 +105,9 @@ window.MODULES = [
       "Then compare your ideas with the statics, biomechanics, and soft-robotics views."
     ],
     "images": {
-      "secondary": "assets/images/elephant_secondary.png",
-      "university": "assets/images/elephant_university.png",
-      "engineering": "assets/images/elephant_engineering.png",
+      "secondary": "assets/images/elephant_secondary.jpg",
+      "university": "assets/images/elephant_university.jpg",
+      "engineering": "assets/images/elephant_engineering.jpg",
       "original": "assets/images/elephant_original.jpeg"
     },
     "secondary": [
@@ -200,9 +200,9 @@ window.MODULES = [
       "Then compare your observations with the ecology, biomechanics, and robot-harvesting views."
     ],
     "images": {
-      "secondary": "assets/images/bird_secondary.png",
-      "university": "assets/images/bird_university.png",
-      "engineering": "assets/images/bird_engineering.png",
+      "secondary": "assets/images/bird_secondary.jpg",
+      "university": "assets/images/bird_university.jpg",
+      "engineering": "assets/images/bird_engineering.jpg",
       "original": "assets/images/bird_original.jpeg"
     },
     "secondary": [
@@ -295,9 +295,9 @@ window.MODULES = [
       "Then compare your observations with the statics, beam, and climbing-robot views."
     ],
     "images": {
-      "secondary": "assets/images/lemurs_secondary.png",
-      "university": "assets/images/lemurs_university.png",
-      "engineering": "assets/images/lemurs_engineering.png",
+      "secondary": "assets/images/lemurs_secondary.jpg",
+      "university": "assets/images/lemurs_university.jpg",
+      "engineering": "assets/images/lemurs_engineering.jpg",
       "original": "assets/images/lemurs_original.jpeg"
     },
     "secondary": [
@@ -390,9 +390,9 @@ window.MODULES = [
       "Then compare your ideas with the buoyancy, hydrodynamics, and underwater-robot views."
     ],
     "images": {
-      "secondary": "assets/images/otter_secondary.png",
-      "university": "assets/images/otter_university.png",
-      "engineering": "assets/images/otter_engineering.png",
+      "secondary": "assets/images/otter_secondary.jpg",
+      "university": "assets/images/otter_university.jpg",
+      "engineering": "assets/images/otter_engineering.jpg",
       "original": "assets/images/otter_original.jpeg"
     },
     "secondary": [
@@ -472,6 +472,280 @@ window.MODULES = [
       "exhibitionDates": "13–23 June 2026, 12pm–7pm daily (closed Sundays)",
       "exhibitionVenue": "Gallery 1, LASALLE College of the Arts, Basement 1, 1 McNally Street, Singapore 187940",
       "catalogueFields": "No., Serial Number, Full English Name, Name in Other Languages, Title of Photograph, Sale Price, Size, Other Odd Size, Year Taken"
+    }
+  },
+  {
+    "id": "camel",
+    "title": "Camel Caravan at Sunset",
+    "emoji": "🐪",
+    "tagline": "Slope geometry, pressure on sand, desert optics, and biomimetic rover design",
+    "original": [
+      "Look first at the dune slope, the caravan spacing, and the low sun near the horizon.",
+      "Ask: what do the silhouettes tell you about light, terrain, and movement?",
+      "Then compare your ideas with the Secondary, University, and Engineering views."
+    ],
+    "images": {
+      "secondary": "assets/images/camel_secondary.jpg",
+      "university": "assets/images/camel_university.jpg",
+      "engineering": "assets/images/camel_engineering.jpg",
+      "original": "assets/images/camel_original.jpg"
+    },
+    "secondary": [
+      "A dune can be treated like a sloping surface, so angle and height matter.",
+      "Wide camel feet reduce pressure on sand by spreading weight over a bigger area.",
+      "The sunset silhouette happens because bright backlighting makes the camels look dark."
+    ],
+    "university": [
+      "Granular media mechanics help explain traction, sinkage, and the angle of repose of dry sand.",
+      "Statics on an incline uses force components, normal force, and friction limits.",
+      "Radiative optics explains silhouette formation, air mass, and warm sunset colours."
+    ],
+    "engineering": [
+      "Mapped to a desert exploration rover inspired by camel movement on soft sand.",
+      "Shared principles: low ground pressure, traction on loose terrain, slope stability, navigation, and thermal protection.",
+      "Engineering adds sensors, suspension, power systems, and robust materials for harsh environments."
+    ],
+    "keywords": [
+      "camel",
+      "desert",
+      "dune",
+      "slope",
+      "pressure",
+      "traction",
+      "granular media",
+      "sunset",
+      "silhouette",
+      "rover",
+      "Descent",
+      "Joyce Lee",
+      "Gobi Desert, Mongolia",
+      "2025",
+      "12in x 18in",
+      "$160",
+      "photographer",
+      "caption",
+      "location"
+    ],
+    "original_file": "assets/images/camel_original.jpg",
+    "thumb": "assets/thumbs/camel.jpg",
+    "source": {
+      "photographer": "Joyce Lee",
+      "caption": "Descent",
+      "entry": "—",
+      "catalogNo": "—",
+      "category": "Wall label provided by user",
+      "year": "2025",
+      "size": "12in x 18in",
+      "source": "Wall label photographed at The 21st Ngee Ann Photographic Exhibition 2026",
+      "sourceUrl": "https://thengeeannkongsi.com.sg/en/eventslist/nape-2026/",
+      "citeText": "Wall label photographed by user",
+      "conceptBadges": [
+        "tan(θ)",
+        "P = F/A",
+        "Traction"
+      ],
+      "originalNotes": [
+        "Look first at the dune slope, the caravan spacing, and the low sun near the horizon.",
+        "Ask: what do the silhouettes tell you about light, terrain, and movement?",
+        "Then compare your ideas with the Secondary, University, and Engineering views."
+      ],
+      "salePrice": "$160",
+      "otherSize": "—",
+      "catalogLine": "Wall label",
+      "sourceEvidence": "Name, title, location, size, year, and price visible on wall label",
+      "photoLocation": "Gobi Desert, Mongolia",
+      "yearLabel": "Year taken",
+      "printSizeLabel": "Exhibition print size",
+      "salePriceLabel": "Sale price / status",
+      "photoLocationLabel": "Photo location",
+      "locationNote": "This source information was transcribed from the wall label shown in the user-provided photograph.",
+      "exhibitionName": "The 21st Ngee Ann Photographic Exhibition 2026",
+      "exhibitionTheme": "A Coming of Age in Perspectives",
+      "exhibitionDates": "13–23 June 2026, 12pm–7pm daily (closed Sundays)",
+      "exhibitionVenue": "Gallery 1, LASALLE College of the Arts, Basement 1, 1 McNally Street, Singapore 187940",
+      "catalogueFields": "Photographer, title, location, size, year, price/status"
+    }
+  },
+  {
+    "id": "tiger",
+    "title": "Tigers in Snow",
+    "emoji": "🐅",
+    "tagline": "Traction, pressure, heat transfer, group movement, and cold-climate rover design",
+    "original": [
+      "Look first at the paws on snow, the steam-like breath, and the spacing of the tigers.",
+      "Ask: how do these animals move without slipping or sinking too much?",
+      "Then compare your ideas with the Secondary, University, and Engineering views."
+    ],
+    "images": {
+      "secondary": "assets/images/tiger_secondary.jpg",
+      "university": "assets/images/tiger_university.jpg",
+      "engineering": "assets/images/tiger_engineering.jpg",
+      "original": "assets/images/tiger_original.jpg"
+    },
+    "secondary": [
+      "Rough paw pads and claws help the tigers grip icy, snowy ground.",
+      "Wide paws spread force over a larger area, lowering pressure and reducing sinkage.",
+      "Thick fur and body heat help them stay warm in a cold environment."
+    ],
+    "university": [
+      "Biomechanics links gait, momentum, traction, and distributed loading in locomotion on snow.",
+      "Work and power increase when animals move through resisting media like deep snow.",
+      "Thermodynamics helps explain heat flux, breath condensation, and insulation."
+    ],
+    "engineering": [
+      "Mapped to a cold-climate search-and-rescue rover convoy inspired by tiger movement and adaptation.",
+      "Shared principles: traction, stability on uneven terrain, distributed load, insulation, sensing, and efficient energy use.",
+      "Engineering adds tracks, suspension, thermal control, LiDAR/cameras, and autonomy."
+    ],
+    "keywords": [
+      "tiger",
+      "snow",
+      "traction",
+      "pressure",
+      "heat transfer",
+      "insulation",
+      "group spacing",
+      "rover",
+      "search and rescue",
+      "Procession of Kings",
+      "Lee Hai Poh",
+      "North East China",
+      "2019",
+      "12in x 18in",
+      "NFS",
+      "photographer",
+      "caption",
+      "location"
+    ],
+    "original_file": "assets/images/tiger_original.jpg",
+    "thumb": "assets/thumbs/tiger.jpg",
+    "source": {
+      "photographer": "Lee Hai Poh",
+      "caption": "Procession of Kings",
+      "entry": "LA024",
+      "catalogNo": "—",
+      "category": "Wall label provided by user",
+      "year": "2019",
+      "size": "12in x 18in",
+      "source": "Wall label photographed at The 21st Ngee Ann Photographic Exhibition 2026",
+      "sourceUrl": "https://thengeeannkongsi.com.sg/en/eventslist/nape-2026/",
+      "citeText": "Wall label photographed by user",
+      "conceptBadges": [
+        "Traction",
+        "P = F/A",
+        "Heat flux"
+      ],
+      "originalNotes": [
+        "Look first at the paws on snow, the steam-like breath, and the spacing of the tigers.",
+        "Ask: how do these animals move without slipping or sinking too much?",
+        "Then compare your ideas with the Secondary, University, and Engineering views."
+      ],
+      "salePrice": "NFS",
+      "otherSize": "—",
+      "catalogLine": "Wall label",
+      "sourceEvidence": "Name, title, location, size, year, and price/status visible on wall label",
+      "photoLocation": "North East China",
+      "yearLabel": "Year taken",
+      "printSizeLabel": "Exhibition print size",
+      "salePriceLabel": "Sale price / status",
+      "photoLocationLabel": "Photo location",
+      "locationNote": "This source information was transcribed from the wall label shown in the user-provided photograph.",
+      "exhibitionName": "The 21st Ngee Ann Photographic Exhibition 2026",
+      "exhibitionTheme": "A Coming of Age in Perspectives",
+      "exhibitionDates": "13–23 June 2026, 12pm–7pm daily (closed Sundays)",
+      "exhibitionVenue": "Gallery 1, LASALLE College of the Arts, Basement 1, 1 McNally Street, Singapore 187940",
+      "catalogueFields": "Photographer, title, location, size, year, price/status"
+    }
+  },
+  {
+    "id": "owl",
+    "title": "The Silent Watcher",
+    "emoji": "🦉",
+    "tagline": "Camouflage, pupil geometry, binocular vision, and owl-inspired smart surveillance",
+    "original": [
+      "Look first at the owl’s eyes, the leaf cover, and how hard it is to spot the bird at first glance.",
+      "Ask: what helps the owl both see well and remain hidden?",
+      "Then compare your ideas with the Secondary, University, and Engineering views."
+    ],
+    "images": {
+      "secondary": "assets/images/owl_secondary.jpg",
+      "university": "assets/images/owl_university.jpg",
+      "engineering": "assets/images/owl_engineering.jpg",
+      "original": "assets/images/owl_original.jpg"
+    },
+    "secondary": [
+      "Camouflage helps the owl blend into leaves, branches, and shadow patterns.",
+      "Large pupils gather more light, which helps vision in dim conditions.",
+      "Forward-facing eyes give binocular vision and good depth perception."
+    ],
+    "university": [
+      "Optics explains pupil area, image formation, field of view, and contrast detection.",
+      "Sensory ecology links visual performance, hearing, concealment, and behavior.",
+      "Signal detection in clutter helps explain how animals find prey in complex environments."
+    ],
+    "engineering": [
+      "Mapped to an owl-inspired smart surveillance system.",
+      "Shared principles: large-aperture optics, binocular sensing, camouflage, signal detection in clutter, and fast recognition.",
+      "Engineering adds dual cameras, AI, low-light imaging, and embedded sensors."
+    ],
+    "keywords": [
+      "owl",
+      "camouflage",
+      "pupil",
+      "optics",
+      "field of view",
+      "binocular vision",
+      "surveillance",
+      "sensor",
+      "AI",
+      "The Silent Watcher",
+      "Neel Tiruviti",
+      "Pasir Ris Park, Singapore",
+      "2026",
+      "12in x 16in",
+      "$50",
+      "photographer",
+      "caption",
+      "location"
+    ],
+    "original_file": "assets/images/owl_original.jpg",
+    "thumb": "assets/thumbs/owl.jpg",
+    "source": {
+      "photographer": "Neel Tiruviti",
+      "caption": "The Silent Watcher",
+      "entry": "B012",
+      "catalogNo": "—",
+      "category": "Wall label provided by user",
+      "year": "2026",
+      "size": "12in x 16in",
+      "source": "Wall label photographed at The 21st Ngee Ann Photographic Exhibition 2026",
+      "sourceUrl": "https://thengeeannkongsi.com.sg/en/eventslist/nape-2026/",
+      "citeText": "Wall label photographed by user",
+      "conceptBadges": [
+        "A = πr²",
+        "Binocular vision",
+        "FOV"
+      ],
+      "originalNotes": [
+        "Look first at the owl’s eyes, the leaf cover, and how hard it is to spot the bird at first glance.",
+        "Ask: what helps the owl both see well and remain hidden?",
+        "Then compare your ideas with the Secondary, University, and Engineering views."
+      ],
+      "salePrice": "$50",
+      "otherSize": "—",
+      "catalogLine": "Wall label",
+      "sourceEvidence": "Name, title, location, size, year, and price/status visible on wall label",
+      "photoLocation": "Pasir Ris Park, Singapore",
+      "yearLabel": "Year taken",
+      "printSizeLabel": "Exhibition print size",
+      "salePriceLabel": "Sale price / status",
+      "photoLocationLabel": "Photo location",
+      "locationNote": "This source information was transcribed from the wall label shown in the user-provided photograph.",
+      "exhibitionName": "The 21st Ngee Ann Photographic Exhibition 2026",
+      "exhibitionTheme": "A Coming of Age in Perspectives",
+      "exhibitionDates": "13–23 June 2026, 12pm–7pm daily (closed Sundays)",
+      "exhibitionVenue": "Gallery 1, LASALLE College of the Arts, Basement 1, 1 McNally Street, Singapore 187940",
+      "catalogueFields": "Photographer, title, location, size, year, price/status"
     }
   }
 ];
