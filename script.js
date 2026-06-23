@@ -57,8 +57,6 @@ const modal = document.getElementById('modal');
 const modalImage = document.getElementById('modalImage');
 const downloadOriginal = document.getElementById('downloadOriginal');
 const downloadExplainer = document.getElementById('downloadExplainer');
-const themeToggle = document.getElementById('themeToggle');
-let lastFocusedElement = null;
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
@@ -96,32 +94,29 @@ function renderGrid(filter = '') {
     if (q && !haystack.includes(q)) return;
     matches += 1;
 
-    const moduleCode = `Field ${String(idx + 1).padStart(2, '0')}`;
     const article = document.createElement('article');
     article.className = 'module-card';
     article.tabIndex = 0;
-    article.setAttribute('role', 'button');
-    article.setAttribute('aria-label', `Open ${m.title} module`);
 
     const badges = (m.keywords || []).slice(0, 4).map(k => `<span class="keyword">${escapeHtml(k)}</span>`).join('');
 
     article.innerHTML = `
       <div class="cover-frame">
         <div class="thumb-stage" aria-hidden="true">
-          <img class="thumb-base" src="${escapeHtml(m.images.original)}" alt="" loading="lazy" decoding="async">
-          <img class="thumb-overlay" src="${escapeHtml(m.images[currentTab])}" alt="" loading="lazy" decoding="async">
+          <img class="thumb-base" src="${escapeHtml(m.images.original)}" alt="">
+          <img class="thumb-overlay" src="${escapeHtml(m.images[currentTab])}" alt="">
           <div class="thumb-gradient"></div>
-          <div class="thumb-badge thumb-badge-left">${escapeHtml(tabs[currentTab].label)}</div>
-          <div class="thumb-badge thumb-badge-right">Original</div>
+          <div class="thumb-badge thumb-badge-left">Original ↔ ${escapeHtml(tabs[currentTab].label)}</div>
+          <div class="thumb-badge thumb-badge-right">Animated preview</div>
         </div>
       </div>
       <div class="module-card-body">
-        <div class="module-title-row"><span class="module-emoji">${escapeHtml(moduleCode)}</span><h3>${escapeHtml(m.title)}</h3></div>
+        <div class="module-title-row"><span class="module-emoji">${escapeHtml(m.emoji)}</span><h3>${escapeHtml(m.title)}</h3></div>
         <p class="module-tagline-small">${escapeHtml(m.tagline)}</p>
         <p class="source-line">${escapeHtml(sourceLine(m))}</p>
         <div class="keyword-row">${badges}</div>
         <div class="card-actions">
-          <span class="button primary open-btn" aria-hidden="true">Open module</span>
+          <button class="button primary open-btn" type="button">Open module</button>
         </div>
       </div>
     `;
@@ -134,6 +129,11 @@ function renderGrid(filter = '') {
         open();
       }
     });
+    article.querySelector('.open-btn').addEventListener('click', e => {
+      e.stopPropagation();
+      open();
+    });
+
     grid.appendChild(article);
   });
 
@@ -142,18 +142,17 @@ function renderGrid(filter = '') {
 
 function renderSourceCard(m) {
   const s = m.source || {};
-  const compactVenue = s.exhibitionVenue ? s.exhibitionVenue.split(', Basement')[0].replace(', Singapore 187940','') : '—';
   const items = [
     ['Photographer', s.photographer || 'Unknown'],
     ['Catalogue title / caption', s.caption || m.title],
-    ['Photo location', s.photoLocation || 'Not stated'],
+    ['Serial number', s.entry || '—'],
+    ['Catalogue no.', s.catalogNo || '—'],
     ['Year taken', s.year || '—'],
     ['Print size', s.size || '—'],
     ['Sale price / status', s.salePrice || '—'],
-    ['Serial number', s.entry || '—'],
-    ['Catalogue no.', s.catalogNo || '—'],
+    ['Photo location', s.photoLocation || 'Not stated'],
     ['Category', s.category || '—'],
-    ['Exhibition venue', compactVenue]
+    ['Exhibition venue', s.exhibitionVenue || '—']
   ];
 
   sourceCard.innerHTML = `
@@ -171,23 +170,14 @@ function updateViewer() {
   if (currentModule === null) return;
   const m = MODULES[currentModule];
   const s = m.source || {};
-  const moduleCode = `Field ${String(currentModule + 1).padStart(2, '0')}`;
 
-  moduleEmoji.textContent = moduleCode;
+  moduleEmoji.textContent = m.emoji;
   moduleTitle.textContent = m.title;
   moduleTagline.textContent = m.tagline;
   viewerCredit.textContent = sourceLine(m);
 
-  document.querySelectorAll('.viewer-tab').forEach(btn => {
-    const isActive = btn.dataset.tab === currentTab;
-    btn.classList.toggle('active', isActive);
-    btn.setAttribute('aria-selected', String(isActive));
-  });
-  document.querySelectorAll('.chip').forEach(btn => {
-    const isActive = btn.dataset.tab === currentTab;
-    btn.classList.toggle('active', isActive);
-    btn.setAttribute('aria-pressed', String(isActive));
-  });
+  document.querySelectorAll('.viewer-tab').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === currentTab));
+  document.querySelectorAll('.chip').forEach(btn => btn.classList.toggle('active', btn.dataset.tab === currentTab));
 
   originalImage.src = m.images.original;
   originalImage.alt = `Original photo: ${m.title}`;
@@ -219,19 +209,9 @@ function closeViewer() {
 }
 
 function openModal(src, alt) {
-  lastFocusedElement = document.activeElement;
   modalImage.src = src;
   modalImage.alt = alt || 'Image preview';
   modal.hidden = false;
-  modal.querySelector('.modal-close').focus();
-}
-
-function closeModal() {
-  modal.hidden = true;
-  modalImage.removeAttribute('src');
-  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
-    lastFocusedElement.focus();
-  }
 }
 
 document.querySelectorAll('.chip').forEach(btn => {
@@ -275,34 +255,25 @@ originalImage.addEventListener('click', () => openModal(originalImage.src, origi
 explainerImage.addEventListener('click', () => openModal(explainerImage.src, explainerImage.alt));
 
 modal.addEventListener('click', e => {
-  if (e.target.dataset.close !== undefined) closeModal();
+  if (e.target.dataset.close !== undefined) modal.hidden = true;
 });
 
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && !modal.hidden) closeModal();
+  if (e.key === 'Escape') modal.hidden = true;
   if (viewer.hidden || currentModule === null) return;
   if (e.key === 'ArrowRight') {
-    e.preventDefault();
     currentModule = (currentModule + 1) % MODULES.length;
     updateViewer();
   }
   if (e.key === 'ArrowLeft') {
-    e.preventDefault();
     currentModule = (currentModule - 1 + MODULES.length) % MODULES.length;
     updateViewer();
   }
 });
 
-function syncThemeToggle() {
-  const isDark = document.documentElement.classList.contains('dark');
-  themeToggle.textContent = isDark ? '☼' : '◐';
-  themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-}
-
-themeToggle.addEventListener('click', () => {
+document.getElementById('themeToggle').addEventListener('click', () => {
   document.documentElement.classList.toggle('dark');
-  syncThemeToggle();
+  document.getElementById('themeToggle').textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
 });
 
-syncThemeToggle();
 renderGrid();
