@@ -142,17 +142,18 @@ function renderGrid(filter = '') {
 
 function renderSourceCard(m) {
   const s = m.source || {};
+  const compactVenue = s.exhibitionVenue ? s.exhibitionVenue.split(', Basement')[0].replace(', Singapore 187940','') : '—';
   const items = [
     ['Photographer', s.photographer || 'Unknown'],
     ['Catalogue title / caption', s.caption || m.title],
-    ['Serial number', s.entry || '—'],
-    ['Catalogue no.', s.catalogNo || '—'],
+    ['Photo location', s.photoLocation || 'Not stated'],
     ['Year taken', s.year || '—'],
     ['Print size', s.size || '—'],
     ['Sale price / status', s.salePrice || '—'],
-    ['Photo location', s.photoLocation || 'Not stated'],
+    ['Serial number', s.entry || '—'],
+    ['Catalogue no.', s.catalogNo || '—'],
     ['Category', s.category || '—'],
-    ['Exhibition venue', s.exhibitionVenue || '—']
+    ['Exhibition venue', compactVenue]
   ];
 
   sourceCard.innerHTML = `
